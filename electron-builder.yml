@@ -1,0 +1,54 @@
+appId: com.financetracker.app
+productName: Finance Tracker
+
+directories:
+  output: release
+  buildResources: assets
+
+# Files included in the Electron package (JS/HTML only — no raw Python)
+files:
+  - dist/electron/**/*
+  - frontend/dist/**/*
+  - "!**/node_modules/**"
+  - "!**/*.map"
+
+# Extra resources bundled alongside the app:
+#   backend_server/ — PyInstaller-compiled backend (no Python install required)
+# Build with:  python -m PyInstaller backend.spec
+extraResources:
+  - from: dist/backend_server
+    to: backend_server
+    filter:
+      - "**/*"
+  - from: assets/icon.ico
+    to: icon.ico
+
+win:
+  target:
+    - target: nsis
+      arch: x64
+    - target: portable
+      arch: x64
+  icon: assets/icon.ico
+  signAndEditExecutable: true    # stamps icon.ico into the exe (no cert configured, so nothing is signed)
+
+portable:
+  artifactName: "FinanceTracker-${version}.exe"   # no "Setup" — single runnable exe
+
+mac:
+  target: dmg
+  icon: assets/icon.icns
+  category: public.app-category.finance
+
+linux:
+  target: AppImage
+  icon: assets/icon.png
+  category: Finance
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  installerIcon: assets/icon.ico
+  uninstallerIcon: assets/icon.ico

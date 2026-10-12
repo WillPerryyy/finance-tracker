@@ -1,0 +1,12 @@
+{
+  "name": "finance-tracker-marketing",
+  "private": true,
+  "description": "Generates the README screenshots and promo video from a fictional demo profile.",
+  "scripts": {
+    "capture": "node capture.mjs"
+  },
+  "devDependencies": {
+    "ffmpeg-static": "^5.2.0",
+    "playwright-core": "^1.48.0"
+  }
+}

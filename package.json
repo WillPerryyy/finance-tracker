@@ -1,0 +1,28 @@
+{
+  "name": "finance-tracker",
+  "version": "1.0.0",
+  "description": "Personal Finance Tracker — Desktop App",
+  "author": "WillPerryyy",
+  "main": "dist/electron/main.js",
+  "scripts": {
+    "build:electron":  "tsc -p tsconfig.electron.json",
+    "build:frontend":  "cd frontend && npm run build:web",
+    "build:backend":   "python -m PyInstaller backend.spec --noconfirm",
+    "build":           "npm run build:frontend && npm run build:electron",
+    "build:full":      "npm run build:frontend && npm run build:backend && npm run build:electron",
+    "start":           "npm run build:electron && electron .",
+    "dev":             "concurrently -n frontend,electron -c cyan,magenta \"cd frontend && npm run dev\" \"npm run dev:electron\"",
+    "dev:electron":    "wait-on http://localhost:5176 && tsc -p tsconfig.electron.json && electron .",
+    "package:win":     "npm run build:full && electron-builder --win",
+    "package:mac":     "npm run build:full && electron-builder --mac",
+    "package:linux":   "npm run build:full && electron-builder --linux"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "concurrently": "^8.2.0",
+    "electron": "^28.3.0",
+    "electron-builder": "^24.13.0",
+    "typescript": "^5.3.0",
+    "wait-on": "^7.2.0"
+  }
+}

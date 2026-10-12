@@ -1,0 +1,21 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+release/
+frontend/dist/
+__pycache__/
+*.pyc
+.venv/
+
+# Personal data: never commit
+data/
+*.log
+.env
+
+# Local tooling
+.claude/
+scripts/import_excel.py
+marketing/raw/
+marketing/*.mp4
+marketing/node_modules/
