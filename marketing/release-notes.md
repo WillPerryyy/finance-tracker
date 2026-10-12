@@ -1,4 +1,4 @@
-The first version I'm sharing. Download **Finance Tracker Setup 1.0.0.exe** below and run it.
+The first version I'm sharing. Download **FinanceTracker-Setup-1.0.0.exe** below and run it.
 
 Windows will probably say "Windows protected your PC" because the app isn't code-signed. Click **More info**, then **Run anyway**.
 

@@ -12,7 +12,7 @@ Everything stays on your computer. There's no sign-up, no bank login and no clou
 
 There are two files on the release page:
 
-- **Finance Tracker Setup 1.0.0.exe** installs the app and adds a desktop shortcut. Use this one.
+- **FinanceTracker-Setup-1.0.0.exe** installs the app and adds a desktop shortcut. Use this one.
 - **FinanceTracker-1.0.0.exe** runs without installing, from anywhere, but takes a few seconds longer to open each time.
 
 The app isn't code-signed (that costs a few hundred dollars a year), so Windows will probably show a blue "Windows protected your PC" box the first time. Click **More info**, then **Run anyway**.
